@@ -361,7 +361,7 @@ li {
 }
 
 #top-product-div1 {
-    display: grid;
+    /* display: grid; */
     /* grid-template-columns: 6% 8% 7% 8% 8%; */
     /* justify-content: space-evenly; */
     color: white;

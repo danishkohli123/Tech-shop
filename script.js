@@ -1618,8 +1618,10 @@ const media = () => {
     }
     // Top product
     if (width <= 600) {
+        document.getElementById('top-product-div1').style.display = 'grid';
         document.getElementById('top-product-div1').style.gridTemplateColumns = '45% 45%';
     } else {
+        document.getElementById('top-product-div1').style.display = 'grid';
         document.getElementById('top-product-div1').style.gridTemplateColumns = '17% 17% 17% 17% 17%';
         document.getElementById('top-product-div1').style.justifyContent = 'space-evenly';
     }
