@@ -311,7 +311,7 @@ li {
 #carousel-inner-div2,
 #carousel-item-div2,
 #carousel-item1-div2 {
-    padding-left: 100px;
+    padding-left: 50px;
     display: grid;
     align-content: center;
 }

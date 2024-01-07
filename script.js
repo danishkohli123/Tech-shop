@@ -1581,11 +1581,8 @@ const media = () => {
     // Carousal Part
     if (width <= 800) {
         document.getElementById('carousel-inner-div1').style.marginBottom = '20px';
-        document.getElementById('carousel-inner-div1').style.marginRight = '40px';
         document.getElementById('carousel-item-div1').style.marginBottom = '20px';
-        document.getElementById('carousel-item-div1').style.marginRight = '40px';
         document.getElementById('carousel-item1-div1').style.marginBottom = '20px';
-        document.getElementById('carousel-item1-div1').style.marginBottom = '40px';
     } else {
         document.getElementById('carousel-inner-div1').style.gridTemplateColumns = '40% 60%';
         document.getElementById('carousel-inner-div1').style.marginBottom = '0px';
