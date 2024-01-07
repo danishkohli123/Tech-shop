@@ -695,7 +695,7 @@ function detail(id) {
             let mainParent = document.createElement('section');
             mainParent.setAttribute('style', 'display:grid;grid-template-columns:60% 30%')
             let mainParentFirstChild = document.createElement('div');
-            mainParentFirstChild.setAttribute('class','text');
+            mainParentFirstChild.setAttribute('class', 'text');
             let Fruppeesicon = document.createElement('i');
             let amount = document.createTextNode(productsData[j].finalPrice);
             Fruppeesicon.setAttribute('class', "fa-solid fa-indian-rupee-sign");
@@ -804,9 +804,10 @@ function detail(id) {
 
             // SPECIFICATION OVERVIEW REVIEW PART
             let mainDiv = document.createElement('div');
-            mainDiv.setAttribute('class','option');
+            mainDiv.setAttribute('class', 'option');
             // mainDiv.setAttribute('style', 'color:white;margin-top:50px;color:white;display:flex;justify-content:space-evenly')
             let mainDivfirst = document.createElement('h2');
+            mainDivfirst.setAttribute('class', 'h2speci')
             mainDivfirst.setAttribute('id', 'h2specification');
             mainDivfirst.setAttribute('onclick', 'specification()');
             let firsttext = document.createTextNode('Specification');
@@ -814,6 +815,7 @@ function detail(id) {
             mainDiv.appendChild(mainDivfirst);
 
             let mainDivsecond = document.createElement('h2');
+            mainDivsecond.setAttribute('class', 'h2view')
             mainDivsecond.setAttribute('id', 'h2overview');
             mainDivsecond.setAttribute('onclick', 'onOverviewClick()');
             let secondtext = document.createTextNode('Overview');
@@ -821,6 +823,7 @@ function detail(id) {
             mainDiv.appendChild(mainDivsecond);
 
             let mainDivthird = document.createElement('h2');
+            mainDivthird.setAttribute('class', 'h2rev')
             mainDivthird.setAttribute('id', 'h2reviews');
             mainDivthird.setAttribute('onclick', 'onReviewClick()');
             let thirdtext = document.createTextNode('Reviews');
@@ -951,16 +954,18 @@ function cartClick() {
         const itemdiv1 = document.createElement('div');
         itemdiv1.setAttribute('id', 'item' + fullbody);
         const itemdiv = document.createElement('div');
-        itemdiv.setAttribute('style', 'display:grid;grid-template-columns:17% 73% 5%;justify-content:center');
+        itemdiv.setAttribute('class', 'summarydatas');
+        // itemdiv.setAttribute('style', 'display:grid;grid-template-columns:17% 73% 5%;justify-content:center');
         const itemdivfirst = document.createElement('div');
         let img = document.createElement('img');
         img.setAttribute('src', product.images[0]);
-        img.setAttribute('style', 'width:110px;height:150px');
+        img.setAttribute('style', 'width:110px;height:150px;margin-bottom:20px');
         itemdivfirst.appendChild(img);
         const itemdivsecond = document.createElement('div');
-        itemdivsecond.setAttribute('style', 'display:grid');
+        itemdivsecond.setAttribute('style', 'display:grid;margin-bottom:20px');
         let span = document.createElement('span');
-        span.setAttribute('style', 'display:flex;color:white;column-gap:10px');
+        span.setAttribute('class','textpart');
+        // span.setAttribute('style', 'display:flex;color:white;column-gap:10px');
         const heading1 = document.createElement('h5');
         heading1.innerHTML = (product.title);
         const heading2 = document.createElement('h5');
@@ -988,7 +993,8 @@ function cartClick() {
 
         // counterPart
         const itemCount = document.createElement('div');
-        itemCount.setAttribute('style', 'display:grid;grid-template-columns:33% 33% 34%;border:1px solid white;width:160px;height:43px;align-items:center')
+        itemCount.setAttribute('class','countparts');
+        // itemCount.setAttribute('style', 'display:grid;grid-template-columns:33% 33% 34%;border:1px solid white;width:160px;height:43px;align-items:center;margin-bottom:20px');
         let span1 = document.createElement('span');
         span1.setAttribute('style', 'color:white;display:grid;justify-content:center;border:1px solid white;height:44px;font-size:23px;background-color:#524f4f;cursor:pointer');
         span1.setAttribute('onclick', 'minus("' + product.id + '", "' + 'countnum' + product.id + '")')
@@ -1343,7 +1349,7 @@ function reviews() {
     for (let i = 0; i < reviewsData.length; i++) {
         let section = document.getElementById('div-sec');
         let maindiv = document.createElement('div');
-        maindiv.setAttribute('class','reviews');
+        maindiv.setAttribute('class', 'reviews');
         // maindiv.setAttribute('style', 'display:grid;grid-template-columns:7% 40%');
         let maindivfirstchild = document.createElement('div');
         maindivfirstchild.setAttribute('style', 'display:grid;justify-content:center;align-items:center');
