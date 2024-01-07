@@ -621,8 +621,10 @@ function detail(id) {
         if (productsData[j].id == id) {
             let mainparentdiv = document.getElementById('div-sec');
             let firstsecondthirdP = document.createElement('div');
+            firstsecondthirdP.setAttribute('id', 'detailpart1');
             firstsecondthirdP.setAttribute('style', 'display:grid;grid-template-columns:15% 40% 38%;justify-content:space-evenly;margin-top:25px');
             let firstdivchild = document.createElement('div');
+            firstdivchild.setAttribute('id', 'firstimgpart');
 
             for (let k = 0; k < productsData[j].images.length; k++) {
                 let imgs = document.createElement('img');
@@ -862,7 +864,7 @@ function detail(id) {
             listitem6.appendChild(listitem6p)
             list.appendChild(listitem6)
 
-            
+
 
             Specificationdetail.appendChild(list);
 
@@ -1426,6 +1428,7 @@ function emptyPage() {
     document.getElementById('search1').style.display = 'none';
     document.getElementById('cross-icon').style.display = 'none';
     document.getElementById('div-sec').style.display = 'none';
+    document.getElementById('searchList').style.display = 'none';
 }
 function startShopping() {
     document.getElementById('emptyCart').style.display = 'none';
@@ -1439,6 +1442,7 @@ function hover() {
     document.getElementById('emptyCart').style.display = 'none';
     document.getElementById('search1').style.display = 'none';
     document.getElementById('cross-icon').style.display = 'none';
+    document.getElementById('searchList').style.display = 'none';
     show();
 }
 function loginForm() {
@@ -1482,7 +1486,8 @@ searchinput1.addEventListener('input', function () {
         let filteredList = productsData.filter(arr => arr.title.includes(searchinput1.value))
         for (let x = 0; x < filteredList.length; x++) {
             let listItem = document.createElement('li');
-            listItem.setAttribute('style', 'background-color:gray;margin-bottom:1px;width:585px;font-size:18px;list-style-type:none;padding-left:20px;color:white;cursor:pointer');
+            listItem.setAttribute('id', 'searchlistitems');
+            listItem.setAttribute('style', 'background-color:gray;margin-bottom:2px;list-style-type:none;padding-left:20px;color:white;cursor:pointer');
             let listitem1 = document.createTextNode(filteredList[x].title);
             listItem.appendChild(listitem1);
             searchinputlist.appendChild(listItem);
@@ -1504,4 +1509,145 @@ function removeSearchList(filterid) {
     document.getElementById('cross-icon').style.display = 'none';
     detail(filterid);
 }
+const media = () => {
+    let width = window.innerWidth;
+    console.log(width);
+    // 
+    if (width <= 800) {
+        // document.querySelector('div-sec').style.display = 'grid';
+        // document.getElementById('div-sec').style.textAlign = 'center';
+        // document.getElementById('detailpart1').style.display = 'grid';
+        // document.getElementById('div-sec').firstChild.style.marginTop = '28px';
+        // document.getElementById('div-sec').firstChild.style.width = '20%';
+        // document.getElementById('div-sec').firstChild.style.width = '20%';
+        // document.getElementById('div-sec').firstChild.style.width = '20%';
 
+    }
+    // else {
+    //     document.getElementById('div-sec').style.display = 'grid';
+    // document.getElementById('detailpart1').style.gridTemplateColumns = '15% 40% 38%';
+    // document.getElementById('div-sec').firstChild.style.marginTop = '0px';
+    // document.getElementById('search1').style.width = '45%';
+    // document.getElementById('search1').style.marginLeft = '30%';
+    // document.getElementById('searchList').style.width = '585px';
+    // document.getElementById('searchList').style.marginLeft = '0px';
+    // document.getElementById('searchList').style.fontSize = '20px';
+    // searchPart
+    if (width <= 1000) {
+        document.getElementById('search1').style.width = '20%';
+        document.getElementById('search1').style.marginLeft = '50%';
+        document.getElementById('searchList').style.width = '30%';
+        document.getElementById('searchList').style.marginLeft = '15%';
+        document.getElementById('searchList').style.fontSize = '15px';
+    } else {
+        document.getElementById('search1').style.width = '45%';
+        document.getElementById('search1').style.marginLeft = '30%';
+        document.getElementById('searchList').style.width = '585px';
+        document.getElementById('searchList').style.marginLeft = '0px';
+        document.getElementById('searchList').style.fontSize = '20px';
+    }
+    // empty Cart
+    if (width <= 700) {
+        document.getElementById('emptyCart').style.marginTop = '10%';
+    } else {
+        document.getElementById('emptyCart').style.marginTop = '0%';
+    }
+    //signUp
+    if (width <= 600) {
+        document.getElementById('signup').style.paddingTop = '0px';
+        document.getElementById('signupicon').style.transform = 'translate(295px,0px)';
+    } else {
+        document.getElementById('signup').style.padding = '10px 45px';
+        document.getElementById('signupicon').style.transform = 'translate(327px,-10px)';
+    }
+    //Login Part
+    if (width <= 600) {
+        document.getElementById('loginP').style.paddingTop = '0px';
+        document.getElementById('loginPicon').style.transform = 'translate(320px,0px)';
+    } else {
+        document.getElementById('loginP').style.padding = '40px';
+        document.getElementById('loginPicon').style.transform = 'translate(345px,-40px)';
+    }
+    // hover part
+    if (width <= 820) {
+        document.getElementById('hoverPart').style.margin = '12px 10px 0px 60%';
+        document.getElementById('hoverPart').style.padding = '5px 5px 0px 5px';
+    } else {
+        document.getElementById('hoverPart').style.margin = '12px 10px 0px 75%';
+        document.getElementById('hoverPart').style.padding = '20px 20px 0px 20px';
+    }
+    // Carousal Part
+    if (width <= 800) {
+        document.getElementById('carousel-inner-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-item-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-item1-div1').style.marginBottom = '20px';
+    } else {
+        document.getElementById('carousel-inner-div1').style.gridTemplateColumns = '40% 60%';
+        document.getElementById('carousel-inner-div1').style.marginBottom = '0px';
+        document.getElementById('carousel-item-div1').style.gridTemplateColumns = '40% 60%';
+        document.getElementById('carousel-item-div1').style.marginBottom = '0px';
+        document.getElementById('carousel-item1-div1').style.gridTemplateColumns = '40% 60%';
+        document.getElementById('carousel-item1-div1').style.marginBottom = '0px';
+    }
+    // featuredProduct
+    if (width > 600 && width <= 1300) {
+        document.getElementById('featuredProduct').style.display = 'grid';
+        document.getElementById('featuredProduct').style.gridTemplateColumns = '45% 45%';
+        document.getElementById('featuredProduct').style.paddingLeft = '0%';
+        document.getElementById('featuredProduct').style.marginTop = '50px';
+        document.getElementById('featuredProduct').style.justifyContent = 'space-evenly';
+    } else if (width <= 600) {
+        document.getElementById('featuredProduct').style.display = 'grid';
+        document.getElementById('featuredProduct').style.paddingLeft = '0%';
+        document.getElementById('featuredProduct').style.marginRight = '20px';
+        document.getElementById('featuredProduct').style.textAlign = 'center';
+    } else {
+        document.getElementById('featuredProduct').style.display = 'grid';
+        document.getElementById('featuredProduct').style.gridTemplateColumns = '18% 18% 18% 18% 18%';
+        document.getElementById('featuredProduct').style.paddingLeft = '0%';
+        document.getElementById('featuredProduct').style.marginTop = '50px';
+        document.getElementById('featuredProduct').style.justifyContent = 'center';
+    }
+    // Top product
+    if (width <= 600) {
+        document.getElementById('top-product-div1').style.gridTemplateColumns = '45% 45%';
+    } else {
+        document.getElementById('top-product-div1').style.gridTemplateColumns = '17% 17% 17% 17% 17%';
+        document.getElementById('top-product-div1').style.justifyContent = 'space-evenly';
+    }
+    // listItems
+    if (width > 680 && width <= 1300) {
+        document.getElementById('unOrdered').style.gridTemplateColumns = '45% 45%';
+        document.getElementById('unOrdered').style.justifyContent = 'space-evenly';
+    } else if (width <= 680) {
+        document.getElementById('unOrdered').style.display = 'grid';
+    } else {
+        document.getElementById('unOrdered').style.gridTemplateColumns = '23% 23% 23% 23%';
+        document.getElementById('unOrdered').style.justifyContent = 'space-evenly';
+    }
+
+    // Advantage
+    if (width > 600 && width <= 1300) {
+        document.getElementById('advantage-div1').style.gridTemplateColumns = '45% 45%';
+        document.getElementById('advantage-div1').style.justifyContent = 'space-evenly';
+    } else if (width <= 600) {
+        document.getElementById('advantage-div1').style.display = 'grid';
+        document.getElementById('advantage-div1').style.marginRight = '20px';
+    } else {
+        document.getElementById('advantage-div1').style.gridTemplateColumns = '23% 23% 23% 23%';
+        document.getElementById('advantage-div1').style.justifyContent = 'space-evenly';
+    }
+    // Footer
+    if (width > 500 && width <= 1000) {
+        document.getElementById('footer-div1').style.gridTemplateColumns = '45% 45%';
+        document.getElementById('footer-div1').style.justifyContent = 'space-evenly';
+    } else if (width <= 500) {
+        document.getElementById('footer-div1').style.display = 'grid';
+        document.getElementById('footer-div1').style.marginRight = '20px';
+    } else {
+        document.getElementById('footer-div1').style.gridTemplateColumns = '23% 23% 23% 23%';
+        document.getElementById('footer-div1').style.justifyContent = 'space-evenly';
+    }
+}
+onresize = media;
+onload = media;

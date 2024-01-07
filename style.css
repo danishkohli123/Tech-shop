@@ -65,7 +65,7 @@ header {
 #countCart {
     color: white;
     position: fixed;
-    right: 115px;
+    right: 8%;
     top: 2px;
     z-index: 4;
     border: 1px solid red;
@@ -112,8 +112,8 @@ header {
 #hoverPart {
     border: 1px solid white;
     color: white;
-    margin: 12px 3% 0px 75%;
-    padding: 20px 20px 0px 20px;
+    /* margin: 12px 3% 0px 75%; */
+    /* padding: 20px 20px 0px 20px; */
     position: absolute;
     z-index: 3;
     display: none;
@@ -156,10 +156,10 @@ li {
 #search1 {
     margin-top: 6px;
     height: 40px;
-    width: 45%;
+    /* width: 45%; */
     position: absolute;
     text-align: center;
-    margin-left: 30%;
+    /* margin-left: 30%; */
     background-color: gray;
     display: none;
 }
@@ -170,7 +170,7 @@ li {
 }
 
 #loginP {
-    padding: 40px;
+    /* padding: 40px; */
     background-color: rgb(34, 33, 33);
     color: white;
     border-color: rgb(34, 33, 33);
@@ -181,7 +181,7 @@ li {
     border: 1px solid black;
     padding: 15px 10px;
     background-color: black;
-    transform: translate(345px, -40px);
+    /* transform: translate(345px, -40px); */
 }
 
 #loginP-p {
@@ -261,7 +261,7 @@ li {
 }
 
 #signup {
-    padding: 10px 45px;
+    /* padding: 10px 45px; */
     background-color: rgb(34, 33, 33);
     color: white;
     border-color: rgb(34, 33, 33);
@@ -272,7 +272,7 @@ li {
     border: 1px solid black;
     padding: 15px 10px;
     background-color: black;
-    transform: translate(327px, -10px);
+    /* transform: translate(327px, -10px); */
 }
 
 #signup-p {
@@ -304,7 +304,8 @@ li {
 #carousel-item1-div1 {
     display: grid;
     margin-top: 20px;
-    grid-template-columns: 40% 60%;
+    /* grid-template-columns: 40% 60%; */
+    text-align: start;
 }
 
 #carousel-inner-div2,
@@ -361,10 +362,10 @@ li {
 
 #top-product-div1 {
     display: grid;
-    grid-template-columns: 6% 8% 7% 8% 8%;
-    justify-content: space-evenly;
+    /* grid-template-columns: 6% 8% 7% 8% 8%; */
+    /* justify-content: space-evenly; */
     color: white;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 #all,
@@ -388,8 +389,10 @@ li {
 
 #advantage-div1 {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    justify-content: center;
+    /* grid-template-columns: 20% 20% 20% 20%; */
+    /* justify-content: space-evenly; */
+    padding-left: 0%;
+    margin-top: 50px;
 }
 
 #advantage-div2,
@@ -426,9 +429,11 @@ footer {
 
 #footer-div1 {
     display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
-    justify-content: space-between;
+    /* grid-template-columns: 24% 24% 24% 24%; */
+    /* justify-content: space-between; */
+    padding-left: 0%;
 }
+
 
 .footer-div {
     display: grid;
@@ -488,22 +493,25 @@ footer {
 
 #unOrdered {
     display: grid;
-    grid-template-columns: 23% 23% 23% 23%;
+    /* grid-template-columns: 23% 23% 23% 23%; */
     padding-left: 0%;
     margin-top: 50px;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 }
 
-.image-container {
+/* .image-container {
     margin-top: 2%;
     display: flex;
     justify-content: space-evenly;
-}
+} */
 
-.image-container p {
+/* .image-container p {
     color: #d8d3d3;
     text-align: center;
     padding-top: 20px;
+} */
+#allimg {
+    text-align: center;
 }
 
 #allimg:hover {
