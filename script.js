@@ -1513,18 +1513,18 @@ const media = () => {
     let width = window.innerWidth;
     console.log(width);
     // 
-    if (width <= 800) {
-        if (document.getElementById('div-sec')) {
-            document.getElementById('div-sec').style.display = 'grid';
-            document.getElementById('div-sec').firstChild.style.display = 'grid'
-            // document.getElementById('div-sec').style.textAlign = 'center';
-            // document.getElementById('detailpart1').style.display = 'grid';
-            // document.getElementById('div-sec').firstChild.style.marginTop = '28px';
-            // document.getElementById('div-sec').firstChild.style.width = '20%';
-            // document.getElementById('div-sec').firstChild.style.width = '20%';
-            // document.getElementById('div-sec').firstChild.style.width = '20%';
-        }
-    }
+    // if (width <= 800) {
+    //     if (document.getElementById('div-sec')) {
+    //         document.getElementById('div-sec').style.display = 'grid';
+    //         document.getElementById('div-sec').firstChild.style.display = 'grid'
+    //         // document.getElementById('div-sec').style.textAlign = 'center';
+    //         // document.getElementById('detailpart1').style.display = 'grid';
+    //         // document.getElementById('div-sec').firstChild.style.marginTop = '28px';
+    //         // document.getElementById('div-sec').firstChild.style.width = '20%';
+    //         // document.getElementById('div-sec').firstChild.style.width = '20%';
+    //         // document.getElementById('div-sec').firstChild.style.width = '20%';
+    //     }
+    // }
     // else {
     //     document.getElementById('div-sec').style.display = 'grid';
     // document.getElementById('detailpart1').style.gridTemplateColumns = '15% 40% 38%';
