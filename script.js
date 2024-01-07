@@ -621,8 +621,9 @@ function detail(id) {
         if (productsData[j].id == id) {
             let mainparentdiv = document.getElementById('div-sec');
             let firstsecondthirdP = document.createElement('div');
+            firstsecondthirdP.setAttribute('class', 'detail')
             firstsecondthirdP.setAttribute('id', 'detailpart1');
-            firstsecondthirdP.setAttribute('style', 'display:grid;grid-template-columns:15% 40% 38%;justify-content:space-evenly;margin-top:25px');
+            // firstsecondthirdP.setAttribute('style', 'display:grid;grid-template-columns:15% 40% 38%;justify-content:space-evenly;margin-top:25px');
             let firstdivchild = document.createElement('div');
             firstdivchild.setAttribute('id', 'firstimgpart');
 
@@ -694,6 +695,7 @@ function detail(id) {
             let mainParent = document.createElement('section');
             mainParent.setAttribute('style', 'display:grid;grid-template-columns:60% 30%')
             let mainParentFirstChild = document.createElement('div');
+            mainParentFirstChild.setAttribute('class','text');
             let Fruppeesicon = document.createElement('i');
             let amount = document.createTextNode(productsData[j].finalPrice);
             Fruppeesicon.setAttribute('class', "fa-solid fa-indian-rupee-sign");
@@ -802,7 +804,8 @@ function detail(id) {
 
             // SPECIFICATION OVERVIEW REVIEW PART
             let mainDiv = document.createElement('div');
-            mainDiv.setAttribute('style', 'color:white;margin-top:50px;color:white;display:flex;justify-content:space-evenly')
+            mainDiv.setAttribute('class','option');
+            // mainDiv.setAttribute('style', 'color:white;margin-top:50px;color:white;display:flex;justify-content:space-evenly')
             let mainDivfirst = document.createElement('h2');
             mainDivfirst.setAttribute('id', 'h2specification');
             mainDivfirst.setAttribute('onclick', 'specification()');
@@ -1340,7 +1343,8 @@ function reviews() {
     for (let i = 0; i < reviewsData.length; i++) {
         let section = document.getElementById('div-sec');
         let maindiv = document.createElement('div');
-        maindiv.setAttribute('style', 'display:grid;grid-template-columns:7% 40%');
+        maindiv.setAttribute('class','reviews');
+        // maindiv.setAttribute('style', 'display:grid;grid-template-columns:7% 40%');
         let maindivfirstchild = document.createElement('div');
         maindivfirstchild.setAttribute('style', 'display:grid;justify-content:center;align-items:center');
         let imageicon = document.createElement('i');
@@ -1512,29 +1516,7 @@ function removeSearchList(filterid) {
 const media = () => {
     let width = window.innerWidth;
     console.log(width);
-    // 
-    // if (width <= 800) {
-    //     if (document.getElementById('div-sec')) {
-    //         document.getElementById('div-sec').style.display = 'grid';
-    //         document.getElementById('div-sec').firstChild.style.display = 'grid'
-    //         // document.getElementById('div-sec').style.textAlign = 'center';
-    //         // document.getElementById('detailpart1').style.display = 'grid';
-    //         // document.getElementById('div-sec').firstChild.style.marginTop = '28px';
-    //         // document.getElementById('div-sec').firstChild.style.width = '20%';
-    //         // document.getElementById('div-sec').firstChild.style.width = '20%';
-    //         // document.getElementById('div-sec').firstChild.style.width = '20%';
-    //     }
-    // }
-    // else {
-    //     document.getElementById('div-sec').style.display = 'grid';
-    // document.getElementById('detailpart1').style.gridTemplateColumns = '15% 40% 38%';
-    // document.getElementById('div-sec').firstChild.style.marginTop = '0px';
-    // document.getElementById('search1').style.width = '45%';
-    // document.getElementById('search1').style.marginLeft = '30%';
-    // document.getElementById('searchList').style.width = '585px';
-    // document.getElementById('searchList').style.marginLeft = '0px';
-    // document.getElementById('searchList').style.fontSize = '20px';
-    // searchPart
+    // search part
     if (width <= 1000) {
         document.getElementById('search1').style.width = '20%';
         document.getElementById('search1').style.marginLeft = '50%';
