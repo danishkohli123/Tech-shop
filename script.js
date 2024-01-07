@@ -1514,14 +1514,16 @@ const media = () => {
     console.log(width);
     // 
     if (width <= 800) {
-        // document.querySelector('div-sec').style.display = 'grid';
+        if(document.getElementById('div-sec') ){
+         document.getElementById('div-sec').style.display = 'grid';
+         document.getElementById('div-sec').firstChild.style.display = 'grid'
         // document.getElementById('div-sec').style.textAlign = 'center';
-        // document.getElementById('detailpart1').style.display = 'grid';
+       // document.getElementById('detailpart1').style.display = 'grid';
         // document.getElementById('div-sec').firstChild.style.marginTop = '28px';
         // document.getElementById('div-sec').firstChild.style.width = '20%';
         // document.getElementById('div-sec').firstChild.style.width = '20%';
         // document.getElementById('div-sec').firstChild.style.width = '20%';
-
+        }
     }
     // else {
     //     document.getElementById('div-sec').style.display = 'grid';
@@ -1579,8 +1581,11 @@ const media = () => {
     // Carousal Part
     if (width <= 800) {
         document.getElementById('carousel-inner-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-inner-div1').style.marginRight = '40px';
         document.getElementById('carousel-item-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-item-div1').style.marginRight = '40px';
         document.getElementById('carousel-item1-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-item1-div1').style.marginBottom = '40px';
     } else {
         document.getElementById('carousel-inner-div1').style.gridTemplateColumns = '40% 60%';
         document.getElementById('carousel-inner-div1').style.marginBottom = '0px';
