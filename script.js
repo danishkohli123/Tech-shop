@@ -1514,15 +1514,15 @@ const media = () => {
     console.log(width);
     // 
     if (width <= 800) {
-        if(document.getElementById('div-sec') ){
-         document.getElementById('div-sec').style.display = 'grid';
-         document.getElementById('div-sec').firstChild.style.display = 'grid'
-        // document.getElementById('div-sec').style.textAlign = 'center';
-       // document.getElementById('detailpart1').style.display = 'grid';
-        // document.getElementById('div-sec').firstChild.style.marginTop = '28px';
-        // document.getElementById('div-sec').firstChild.style.width = '20%';
-        // document.getElementById('div-sec').firstChild.style.width = '20%';
-        // document.getElementById('div-sec').firstChild.style.width = '20%';
+        if (document.getElementById('div-sec')) {
+            document.getElementById('div-sec').style.display = 'grid';
+            document.getElementById('div-sec').firstChild.style.display = 'grid'
+            // document.getElementById('div-sec').style.textAlign = 'center';
+            // document.getElementById('detailpart1').style.display = 'grid';
+            // document.getElementById('div-sec').firstChild.style.marginTop = '28px';
+            // document.getElementById('div-sec').firstChild.style.width = '20%';
+            // document.getElementById('div-sec').firstChild.style.width = '20%';
+            // document.getElementById('div-sec').firstChild.style.width = '20%';
         }
     }
     // else {
@@ -1581,15 +1581,21 @@ const media = () => {
     // Carousal Part
     if (width <= 800) {
         document.getElementById('carousel-inner-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-inner-div2').style.paddingLeft = '0%';
         document.getElementById('carousel-item-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-item-div2').style.paddingLeft = '0%';
         document.getElementById('carousel-item1-div1').style.marginBottom = '20px';
+        document.getElementById('carousel-item1-div2').style.paddingLeft = '0%';
     } else {
         document.getElementById('carousel-inner-div1').style.gridTemplateColumns = '40% 60%';
         document.getElementById('carousel-inner-div1').style.marginBottom = '0px';
+        document.getElementById('carousel-inner-div2').style.paddingLeft = '100px';
         document.getElementById('carousel-item-div1').style.gridTemplateColumns = '40% 60%';
         document.getElementById('carousel-item-div1').style.marginBottom = '0px';
+        document.getElementById('carousel-item-div2').style.paddingLeft = '100px';
         document.getElementById('carousel-item1-div1').style.gridTemplateColumns = '40% 60%';
         document.getElementById('carousel-item1-div1').style.marginBottom = '0px';
+        document.getElementById('carousel-item1-div2').style.paddingLeft = '100px';
     }
     // featuredProduct
     if (width > 600 && width <= 1300) {
