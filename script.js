@@ -964,7 +964,7 @@ function cartClick() {
         const itemdivsecond = document.createElement('div');
         itemdivsecond.setAttribute('style', 'display:grid;margin-bottom:20px');
         let span = document.createElement('span');
-        span.setAttribute('class','textpart');
+        span.setAttribute('class', 'textpart');
         // span.setAttribute('style', 'display:flex;color:white;column-gap:10px');
         const heading1 = document.createElement('h5');
         heading1.innerHTML = (product.title);
@@ -993,7 +993,7 @@ function cartClick() {
 
         // counterPart
         const itemCount = document.createElement('div');
-        itemCount.setAttribute('class','countparts');
+        itemCount.setAttribute('class', 'countparts');
         // itemCount.setAttribute('style', 'display:grid;grid-template-columns:33% 33% 34%;border:1px solid white;width:160px;height:43px;align-items:center;margin-bottom:20px');
         let span1 = document.createElement('span');
         span1.setAttribute('style', 'color:white;display:grid;justify-content:center;border:1px solid white;height:44px;font-size:23px;background-color:#524f4f;cursor:pointer');
@@ -1054,7 +1054,7 @@ function summarypart() {
     }
 
     let head = document.createElement('h2');
-    head.setAttribute('id', "totalItem")
+    head.setAttribute('id', "totalItem");
     head.setAttribute('style', 'color:white');
     head.innerHTML = 'Order Summary (' + cart.length + ' items)';
     let parentprice = document.createElement('div');
@@ -1088,7 +1088,7 @@ function summarypart() {
     let discount = document.createElement('i');
     discount.setAttribute('class', 'fa-solid fa-indian-rupee-sign');
     discount.setAttribute('style', 'color:green;font-size:22px;margin-bottom:13px');
-    discount.innerHTML = ' ' + originalPrice - finalPrice;
+    discount.innerHTML = " " + originalPrice - finalPrice;
     let Delivery = document.createElement('h6');
     Delivery.setAttribute('style', 'color:green;font-size:22px;margin-bottom:13px');
     Delivery.innerHTML = 'Free';
@@ -1168,9 +1168,6 @@ function plus(id, countId) {
             addToLocalStorage();
         }
     }
-
-    // totalitems = cart.reduce((countId, cart) => countId + cart.count, 0);
-    // console.log(totalitems);
 }
 
 function cartIcon() {
@@ -1521,7 +1518,6 @@ function removeSearchList(filterid) {
 }
 const media = () => {
     let width = window.innerWidth;
-    console.log(width);
     // search part
     if (width <= 1000) {
         document.getElementById('search1').style.width = '20%';
