@@ -515,19 +515,19 @@ function display(item) {
             let list = document.getElementById('unOrdered');
             let listItem = document.createElement('li');
             listItem.setAttribute('onClick', 'listfn()')
-            listItem.setAttribute('style', 'color:white;list-style-type:none;color: white;list-style-type: none;font-size: 22px;font-size: 40px;border:1px solid white;height:96%;padding:200px 35px;cursor:pointer')
+            listItem.setAttribute('style', 'color:white;list-style-type:none;color: white;list-style-type: none;font-size: 22px;font-size: 20px;border:1px solid white;height:96%;padding:250px 35px;cursor:pointer')
             let listItemdata = document.createTextNode('Browse All Products -->')
             listItem.appendChild(listItemdata);
             list.appendChild(listItem);
         }
         else {
-            createListItem(item[j]);
+            createListItem(item[j], parent);
         }
     }
 }
 
-function createListItem(data) {
-    let list = document.getElementById('unOrdered');
+function createListItem(data, parent) {
+
     let listItem = document.createElement('li');
     listItem.setAttribute('id', data.id);
     listItem.setAttribute('style', 'list-style-type: none;display:grid;justify-content:space-around;padding-bottom:40px;border:1px solid lightgray;margin-bottom:20px;')
@@ -591,17 +591,40 @@ function createListItem(data) {
     listItem.appendChild(br);
     listItem.appendChild(br1);
     listItem.appendChild(btn);
-    list.appendChild(listItem);
+    parent.appendChild(listItem);
 }
+// createseconlist();
+function createsecondlist() {
+    let carousel = document.getElementsByClassName('carousel slide');
+    carousel[0].style.display = 'none';
+    carousel[1].style.display = 'none';
+    document.getElementById('top-product-h2').style.display = 'none';
+    document.getElementById('top-product-div1').style.display = 'none';
+    document.getElementById('unOrderedsecondlist').style.display = 'grid';
 
+    let mainParent = document.getElementById('unOrderedsecondlist');
+    mainParent.style.display = 'grid';
+    if (mainParent.children.length > 1) {
+        mainParent.removeChild(mainParent.lastChild);
+    }
+    let parent = document.createElement('span');
+    parent.setAttribute('id', '3listitem');
+    parent.setAttribute('class', 'listitem3');
+    // parent.setAttribute('style', 'display:grid;grid-template-columns:31% 31% 31%;justify-content:space-evenly');
+    for (let k = 0; k < productsData.length; k++) {
+        createListItem(productsData[k], parent);
+    }
+    mainParent.appendChild(parent);
+}
 function listfn() {
-    let myNode = document.getElementById('unOrdered')
+    let myNode = document.getElementById('unOrdered');
     while (myNode.firstChild) {
         myNode.removeChild(myNode.lastChild);
     }
-    browseAllProduct = false;
-    totalLength = productsData.length - 1;
-    display(productsData);
+
+    // totalLength = productsData.length - 1;
+    // display(productsData);
+    createsecondlist();
 }
 
 // MAIN PRODUCT DETAIL PART
@@ -1021,7 +1044,7 @@ function cartClick() {
         const itemdivthird = document.createElement('div');
         let dustbin = document.createElement('i');
         dustbin.setAttribute('class', 'fa-regular fa-trash-can fa-xl');
-        dustbin.setAttribute('style', 'color: #a1a3a5;');
+        dustbin.setAttribute('style', 'color: #a1a3a5;cursor:pointer');
         dustbin.setAttribute('onclick', 'removefn("' + 'item' + fullbody + '","' + product.id + '")')
         itemdivthird.appendChild(dustbin);
 
@@ -1269,7 +1292,6 @@ function relatedProducts(data) {
     }
 }
 
-
 function specification() {
     setVisibility('grid', 'none', 'none')
     setStyle('h2reviews', '', '', '')
@@ -1411,6 +1433,10 @@ function show() {
     while (list.children.length > 0) {
         list.removeChild(list.lastChild);
     }
+    browseAllProduct = true;
+    document.getElementById('unOrderedsecondlist').style.display = 'none';
+    // document.getElementById('unOrdered').style.display = 'block';
+    display(productsData)
 }
 function search() {
     document.getElementById('search1').style.display = 'block';
@@ -1515,6 +1541,100 @@ function removeSearchList(filterid) {
     document.getElementById('search1').style.display = 'none';
     document.getElementById('cross-icon').style.display = 'none';
     detail(filterid);
+}
+function feature() {
+    let item = productsData.filter(arr => arr.tag == "featured-product");
+    let parent = document.getElementById('3listitem');
+    while (parent.children.length > 0) {
+        parent.removeChild(parent.lastChild);
+    }
+    for (let i = 0; i < item.length; i++) {
+        createListItem(item[i], parent);
+    }
+    document.getElementById('filterbtn').style.display = 'block';
+}
+
+function toprate() {
+    let item = productsData.sort((a, b) => b.rateCount - a.rateCount);
+    let parent = document.getElementById('3listitem');
+    while (parent.children.length > 0) {
+        parent.removeChild(parent.lastChild);
+    }
+    for (let i = 0; i < item.length; i++) {
+        createListItem(item[i], parent);
+    }
+    document.getElementById('filterbtn').style.display = 'block';
+}
+function lowestprice() {
+    //creating copy of array and then sorting it.
+    let item = productsData.slice(0).sort((a, b) => a.finalPrice - b.finalPrice);
+    console.log(item);
+    let parent = document.getElementById('3listitem');
+    while (parent.children.length > 0) {
+        parent.removeChild(parent.lastChild);
+    }
+    for (let i = 0; i < item.length; i++) {
+        createListItem(item[i], parent);
+    }
+    document.getElementById('filterbtn').style.display = 'block';
+}
+function highestprice() {
+    //creating copy of array and then sorting it.
+    let item = productsData.slice(0).sort((a, b) => b.finalPrice - a.finalPrice);
+    console.log(item);
+    let parent = document.getElementById('3listitem');
+    while (parent.children.length > 0) {
+        parent.removeChild(parent.lastChild);
+    }
+    for (let i = 0; i < item.length; i++) {
+        createListItem(item[i], parent);
+    }
+    document.getElementById('filterbtn').style.display = 'block';
+}
+
+function jbl() {
+    let jbl = document.getElementById('1').checked
+    let boat = document.getElementById('2').checked
+    let sony = document.getElementById('3').checked
+
+    let item = productsData
+    if (jbl || boat || sony) {
+        item = productsData.filter(item => (jbl && item.brand.toUpperCase() == "JBL")
+            || (boat && item.brand.toUpperCase() == "BOAT")
+            || (sony && item.brand.toUpperCase() == "SONY"));
+    }
+
+    let headphone = document.getElementById('4').checked
+    let earbud = document.getElementById('5').checked
+    let earphone = document.getElementById('6').checked
+    let band = document.getElementById('7').checked
+
+    if (headphone || earbud || earphone || band) {
+        item = item.filter(item => (headphone && item.category == "Headphones")
+            || (earbud && item.category == "Earbuds")
+            || (earphone && item.category == "Earphones")
+            || (band && item.category == "Neckbands")
+        );
+    }
+    let parent = document.getElementById('3listitem');
+    while (parent.children.length > 0) {
+        parent.removeChild(parent.lastChild);
+    }
+    for (let i = 0; i < item.length; i++) {
+        createListItem(item[i], parent);
+    }
+    document.getElementById('filterbtn').style.display = 'block';
+}
+
+function removeAllFilters() {
+    let parent = document.getElementById('3listitem');
+    while (parent.children.length > 0) {
+        parent.removeChild(parent.lastChild);
+    }
+    for (let i = 0; i < productsData.length; i++) {
+        createListItem(productsData[i], parent);
+    }
+    document.getElementById('filterbtn').style.display = 'none';
 }
 const media = () => {
     let width = window.innerWidth;

@@ -24,7 +24,7 @@
 
 <body>
     <section id="main-section">
-        <header>
+        <header class="mainheader">
             <ul id="searchList"></ul>
             <span class="header-span">
                 <span>
@@ -253,6 +253,56 @@
                 </p>
             </div>
             <ul id="unOrdered"></ul>
+            <button id="filterbtn"
+                style="background-color: red;border-color:red;padding: 10px;color:white;margin-left: 60px;margin-bottom: 20px;display: none;border-radius: 7px;"
+                onclick="removeAllFilters()">Remove
+                Filter</button>
+            <ul id="unOrderedsecondlist" class="unorderedlist2" style="display: none;">
+                <span style="color: gray;background-color:  #353333;padding-left: 20px;padding-right: 20px;">
+                    <div>
+                        <h2>Sort By</h2>
+                        <hr style="border: 1px solid gray;">
+                        <p class="hoverclass" style="cursor: pointer;">Latest</p>
+                        <p class="hoverclass" style="cursor: pointer;" onclick="feature()">Featured</p>
+                        <p class="hoverclass" style="cursor: pointer;" onclick="toprate()">Top Rated</p>
+                        <p class="hoverclass" style="cursor: pointer;" onclick="lowestprice()">Price (Lowest First)</p>
+                        <p class="hoverclass" style="cursor: pointer;" onclick="highestprice()">Price (Highest First)
+                        </p>
+                        <br>
+                        <br>
+                    </div>
+                    <div>
+                        <h2>Filter By</h2>
+                        <hr style="border: 1px solid gray;">
+                        <h4>Brands</h4>
+                        <input name="selection" value="JBL" style="cursor: pointer;" type="checkbox" id="1"
+                            onclick="jbl()">
+                        <label class="hoverclass" for="1">&nbsp;JBL</label><br>
+                        <input name="selection" value="BoAt" style="cursor: pointer;" type="checkbox" value="BoAt"
+                            id="2" onclick="jbl()">
+                        <label class="hoverclass" for="2">&nbsp;BoAt</label><br>
+                        <input name="selection" value="Sony" style="cursor: pointer;" type="checkbox" value="Sony"
+                            id="3" onclick="jbl()">
+                        <label class="hoverclass" for="3">&nbsp;Sony</label><br>
+                        <br>
+                        <br>
+                        <h4>category</h4>
+                        <input style="cursor: pointer;" type="checkbox" id="4" onclick="jbl()">
+                        <label class="hoverclass" for="4">&nbsp;Headphones</label><br>
+                        <input style="cursor: pointer;" type="checkbox" id="5" onclick="jbl()">
+                        <label class="hoverclass" for="5">&nbsp;Earbuds</label><br>
+                        <input style="cursor: pointer;" type="checkbox" id="6" onclick="jbl()">
+                        <label class="hoverclass" for="6">&nbsp;Earphones</label><br>
+                        <input style="cursor: pointer;" type="checkbox" id="7" onclick="jbl()">
+                        <label class="hoverclass" for="7">&nbsp;Neckbands</label><br>
+                        <br>
+                        <br>
+
+                        <h4>Price</h4>
+                        <i class="fa-solid fa-indian-rupee-sign" style="color:gray">19,990</i>
+                    </div>
+                </span>
+            </ul>
         </section>
         <!-- detail part -->
         <section id="div-sec"></section>
