@@ -713,3 +713,13 @@
           justify-content: center
       }
   }
+
+  #priceSlider::-webkit-slider-thumb {
+      /* Styling for the thumb (slider knob) */
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+  }

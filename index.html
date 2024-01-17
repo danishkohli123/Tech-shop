@@ -258,9 +258,9 @@
                 onclick="removeAllFilters()">Remove
                 Filter</button>
             <ul id="unOrderedsecondlist" class="unorderedlist2" style="display: none;">
-                <span style="color: gray;background-color:  #353333;padding-left: 20px;padding-right: 20px;">
+                <span style="color: gray;background-color:#353333;padding-left: 20px;padding-right: 20px;">
                     <div>
-                        <h2>Sort By</h2>
+                        <h2 style="color: white;">Sort By</h2>
                         <hr style="border: 1px solid gray;">
                         <p class="hoverclass" style="cursor: pointer;">Latest</p>
                         <p class="hoverclass" style="cursor: pointer;" onclick="feature()">Featured</p>
@@ -272,9 +272,9 @@
                         <br>
                     </div>
                     <div>
-                        <h2>Filter By</h2>
+                        <h2 style="color: white;">Filter By</h2>
                         <hr style="border: 1px solid gray;">
-                        <h4>Brands</h4>
+                        <h4 style="color: white;">Brands</h4>
                         <input name="selection" value="JBL" style="cursor: pointer;" type="checkbox" id="1"
                             onclick="jbl()">
                         <label class="hoverclass" for="1">&nbsp;JBL</label><br>
@@ -286,7 +286,7 @@
                         <label class="hoverclass" for="3">&nbsp;Sony</label><br>
                         <br>
                         <br>
-                        <h4>category</h4>
+                        <h4 style="color: white;">category</h4>
                         <input style="cursor: pointer;" type="checkbox" id="4" onclick="jbl()">
                         <label class="hoverclass" for="4">&nbsp;Headphones</label><br>
                         <input style="cursor: pointer;" type="checkbox" id="5" onclick="jbl()">
@@ -298,8 +298,10 @@
                         <br>
                         <br>
 
-                        <h4>Price</h4>
-                        <i class="fa-solid fa-indian-rupee-sign" style="color:gray">19,990</i>
+                        <h4 style="color: white;">Price</h4>
+                        <i class="fa-solid fa-indian-rupee-sign" style="color:gray">19,990</i><br>
+                        <input style=" border: 2px solid #fff;color: red;" id="priceSlider" type="range" min="0" max="19,990"
+                            value="50" />
                     </div>
                 </span>
             </ul>
