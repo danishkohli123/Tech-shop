@@ -333,6 +333,7 @@
       color: white;
       border-color: red;
       width: 100px;
+      border-radius:8px;
   }
 
   #carousel-inner-div3,
@@ -461,8 +462,8 @@
       background-color: red;
       color: white;
       width: 110px;
-      height: 35px;
       border-color: red;
+      border-radius: 10px;
   }
 
   .footer-ul {
@@ -606,6 +607,7 @@
           display: grid;
           grid-template-columns: 15% 40% 38%;
           margin-bottom: 70px;
+          justify-content: space-evenly;
       }
   }
 

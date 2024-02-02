@@ -566,7 +566,7 @@ function createListItem(data, parent) {
     let br1 = document.createElement('br');
     let btn = document.createElement('button');
     btn.setAttribute('onclick', 'createobject("' + data.id + '")');
-    btn.setAttribute('style', 'background-color:red;color:white;width:250px;font-size:21px;height:40px;display:grid;justify-self:center;border-color:red')
+    btn.setAttribute('style', 'background-color:red;color:white;width:250px;font-size:21px;display:grid;justify-self:center;border-color:red;border-radius:10px')
     let btndata = document.createTextNode('Add to cart');
     btn.appendChild(btndata);
     i1.appendChild(price1);
@@ -777,7 +777,7 @@ function detail(id) {
             let mainParentSecondChild = document.createElement('div');
             mainParentSecondChild.setAttribute('style', 'display:grid;align-items:center')
             let button = document.createElement('button');
-            button.setAttribute('style', 'background-color:green;color:white;border-color:green;border-radius:7px;height:35px');
+            button.setAttribute('style', 'background-color:green;color:white;border-color:green;border-radius:10px');
             let btnText = document.createTextNode('In Stock');
             button.appendChild(btnText);
             mainParentSecondChild.appendChild(button);
@@ -815,7 +815,7 @@ function detail(id) {
 
             let addtocart = document.createElement('button');
             addtocart.setAttribute('onclick', 'createobject("' + id + '")')
-            addtocart.setAttribute('style', 'width:250px;height:45px;font-size:22px;color:white;background-color:red;margin-top:40px;border-color:red');
+            addtocart.setAttribute('style', 'width:250px;font-size:22px;color:white;background-color:red;margin-top:40px;border-color:red;border-radius:10px');
             let addtocarttext = document.createTextNode('Add to cart');
             addtocart.appendChild(addtocarttext);
             thirddivchild.appendChild(addtocart);
@@ -1278,7 +1278,7 @@ function relatedProducts(data) {
         let br = document.createElement('br');
         let btn = document.createElement('button');
         btn.setAttribute('onclick', 'createobject("' + data[j].id + '")');
-        btn.setAttribute('style', 'background-color:red;color:white;width:250px;font-size:21px;height:40px;display:grid;justify-self:center;border-color:red;margin-left:15px;margin-bottom:25px')
+        btn.setAttribute('style', 'background-color:red;color:white;width:250px;font-size:21px;display:grid;justify-self:center;border-color:red;margin-left:15px;margin-bottom:25px;border-radius:10px')
         let btndata = document.createTextNode('Add to cart');
         btn.appendChild(btndata);
         i1.appendChild(price1);
